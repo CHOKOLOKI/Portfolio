@@ -99,7 +99,6 @@ nav {
     margin: 5px;
     border-radius: 50px;
     background-color: whitesmoke;
-    text-shadow: #212529;
     filter: blur();
     color: var(--primary-color);
 }
@@ -171,7 +170,7 @@ nav {
     color: var(--text-light);
     padding: 12px 24px;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 70px;
     font-weight: bold;
     transition: background-color var(--transition-speed), transform var(--transition-speed);
 }
