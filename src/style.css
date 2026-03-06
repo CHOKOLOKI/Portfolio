@@ -27,9 +27,12 @@ body {
 section {
     padding: 60px 20px;
     text-align: center;
+    position: relative;
+    background-color: var(--bg-color);
 }
 
 h1, h2, h3 {
+    color: (315deg, #6617cb 0%, #cb218e 74%);
     margin-top: 0;
     margin-bottom: 20px;
 }
@@ -49,13 +52,15 @@ p {
 /* --- Header & Navigation --- */
 header {
     border-radius: 70px;
-    background-color: transparent;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    position: sticky;
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    position: fixed;
     width: 90%;
     max-width: 1000px;
-    margin: -47px auto;
     top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 100;
 }
 
@@ -141,13 +146,16 @@ nav {
 
 /* --- Hero Section --- */
 #hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://picsum.photos/1600/900') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/background.jpg') no-repeat center center/cover;
     color: var(--text-light);
-    height: 90vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    top: 0;
+    position: sticky;
+    z-index: 1;
 }
 
 .hero-content {
@@ -201,6 +209,7 @@ nav {
 /* --- About Section --- */
 #about {
     background-color: var(--card-bg);
+    z-index: 2;
 }
 
 .about-content ul {
@@ -227,6 +236,12 @@ nav {
 
 
 /* --- Projects Section --- */
+#projects {
+    background-color: #5A4FCF;
+    background-image: linear-gradient(315deg, #5A4FCF 0%, #242124 74%);
+    z-index: 2;
+}
+
 .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -275,6 +290,7 @@ nav {
 /* --- Contact Section --- */
 #contact {
     background-color: var(--card-bg);
+    z-index: 2;
 }
 
 /* --- Footer --- */
@@ -283,6 +299,8 @@ footer {
     color: var(--text-dark);
     text-align: center;
     padding: 20px;
+    position: relative;
+    z-index: 2;
 }
 
 /* --- Responsive Design --- */
