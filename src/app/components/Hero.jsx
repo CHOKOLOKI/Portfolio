@@ -76,7 +76,23 @@ const Hero = () => {
         ease: "easeInOut"
       }}
     >
-    <Terminal className='w-20, h-20'/>
+    <Terminal className='w-20, 20'/>
+    </motion.div>
+
+    <motion.div 
+      className=' absolute top-1/3 left-16 text-purple-400/20'
+      animate={{
+        y: [0, -15, 0],
+        x: [0, 10, 0]
+      }}
+      transition={{
+        duration: 7,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }}
+      >
+      <Sparkles className='w-12 h-12'/>
+
     </motion.div>
     </section>
   );
