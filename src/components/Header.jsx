@@ -12,11 +12,10 @@ const Header = () => {
   };
 
   return (
-    <header>
+    <header className={isMenuOpen ? 'menu-open' : ''}>
       <nav>
-        <div className="logo">Gio Daguil</div>
         <button className="menu-toggle" onClick={toggleMenu} aria-label="Toggle menu">
-          <div className={`hamburger ${isMenuOpen ? 'open' : ''}`}></div>
+          <span className={`hamburger ${isMenuOpen ? 'open' : ''}`}></span>
         </button>
         <ul className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
           <li><a href="#hero" onClick={closeMenu}>Home</a></li>
