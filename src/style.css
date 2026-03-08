@@ -1,5 +1,5 @@
-@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+@import "tailwindcss";
 
 @theme {
   --color-primary: #C9B59C;
@@ -15,40 +15,92 @@
   --background-image-gradient-opposite: linear-gradient(90deg, #fcb045 0%, #fd1d1d 50%, #833ab4 100%);
 }
 
-@layer base {
-  html {
-    scroll-behavior: smooth;
-  }
-  body {
-    @apply bg-bg text-text-dark font-sans leading-relaxed m-0 p-0;
-  }
-  section {
-    @apply py-24 px-5 text-center relative bg-bg;
-  }
-  h1, h2, h3 {
-    @apply bg-gradient-uniform bg-clip-text text-transparent mt-0 mb-5;
-  }
-  h1 {
-    font-family: 'Dancing Script', cursive;
-    @apply text-8xl tracking-wider;
-  }
-  h2 {
-    @apply text-4xl relative inline-block pb-2 mb-10;
-  }
-  h2::after {
-    content: '';
-    @apply absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-1 rounded-sm bg-gradient-uniform;
-  }
-  p {
-    @apply max-w-3xl mx-auto mb-5;
-  }
+/* Base Styles */
+html { scroll-behavior: smooth; }
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text-dark);
+  font-family: var(--font-sans);
+  line-height: 1.625;
+  margin: 0;
+  padding: 0;
 }
+section { padding: 6rem 1.25rem; text-align: center; position: relative; background-color: var(--color-bg); }
+h1, h2, h3 {
+  background-image: var(--background-image-gradient-uniform);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin: 0 0 1.25rem 0;
+}
+h1 { font-family: 'Dancing Script', cursive; font-size: 6rem; letter-spacing: 0.05em; }
+h2 { font-size: 2.25rem; position: relative; display: inline-block; padding-bottom: 0.5rem; margin-bottom: 2.5rem; }
+h2::after {
+  content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+  width: 4rem; height: 0.25rem; border-radius: 0.125rem; background-image: var(--background-image-gradient-uniform);
+}
+p { max-width: 48rem; margin: 0 auto 1.25rem auto; }
 
-@layer components {
-  .btn {
-    @apply inline-block bg-gradient-uniform text-white border-4 border-white py-3.5 px-7 no-underline rounded-full font-bold transition-all duration-300 shadow-lg hover:bg-gradient-opposite hover:translate-y-[-3px] hover:shadow-xl;
-  }
-  .btn-secondary {
-    @apply inline-block bg-transparent text-text-dark border-2 border-primary py-2.5 px-5 rounded-full font-bold no-underline transition-all duration-300 hover:bg-primary hover:text-white;
-  }
+/* Global Component Classes */
+.btn {
+  display: inline-block;
+  background-image: var(--background-image-gradient-uniform);
+  color: white;
+  border: 4px solid white;
+  padding: 0.875rem 1.75rem;
+  text-decoration: none;
+  border-radius: 9999px;
+  font-weight: 700;
+  transition: all 0.3s;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+}
+.btn:hover { background-image: var(--background-image-gradient-opposite); transform: translateY(-3px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); /* shadow-xl */ }
+
+.btn-secondary {
+  display: inline-block;
+  background-color: transparent;
+  color: var(--color-text-dark);
+  border: 2px solid var(--color-primary);
+  padding: 0.625rem 1.25rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.btn-secondary:hover { background-color: var(--color-primary); color: white; }
+
+/* Header Component */
+.header-container {
+  position: fixed;
+  top: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  transition: all 0.3s;
+  border: 4px solid white;
+  background-image: var(--background-image-gradient-uniform);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border-radius: 9999px;
+}
+.header-container.menu-open { width: calc(100% - 2.5rem); border-radius: 2rem; }
+
+/* Project Component */
+.project-card {
+  background-color: var(--color-card-bg);
+  border-radius: 1.25rem;
+  padding: 1.875rem;
+  border: 1px solid rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s;
+}
+.project-card:hover { transform: translateY(-0.625rem); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+
+.project-placeholder {
+  height: 12.5rem;
+  background-color: var(--color-bg);
+  background-image: linear-gradient(45deg, rgba(201,181,156,0.1) 25%, transparent 25%, transparent 50%, rgba(201,181,156,0.1) 50%, rgba(201,181,156,0.1) 75%, transparent 75%, transparent);
+  background-size: 30px 30px;
+  border-radius: 0.9375rem;
 }
