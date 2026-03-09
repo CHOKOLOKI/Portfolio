@@ -1,25 +1,46 @@
+import { Code2, Palette, Rocket } from 'lucide-react';
+import { color, motion } from 'motion/react';
+import { desc, title } from 'motion/react-client';
 import React from 'react';
+import { shadow } from 'three/tsl';
 
 const About = () => {
-  const skills = ["HTML & CSS", "JavaScript (ES6+)", "React", "Node.js", "Python", "R"];
+  const skills = [
+    {
+      icon: Code2,
+      title: 'Clean Code',
+      description: 'Writing maintainable, well documented code that follows industry best practices and standards.',
+      color: 'from-blue-500/50',
+      shadowColor: 'shadow-blue-500/50',
+    },
+    {
+    icon: Palette,
+    title: 'UI/UX Focus',
+    description: 'Creating intuitive, accessible interfaces that provice exceptional user experiences.',
+    color : 'from-purple-400 to-pink-400',
+    shadowColor: 'shadow-purple-500/50'
+    },
+    {
+      icon: Rocket,
+      title: 'Performance',
+      description: 'Optimizing application for speed, efficiency, and scalability across all devices.',
+      color: 'from-pink-400 to-rose-400',
+      shadowColor: 'shadow-pink-500/50'
+    }
+  ];
 
   return (
-    <section id="about" className="bg-card-bg z-[2]">
-      <h2>About Me</h2>
-      <div className="max-w-3xl mx-auto">
-        <p>Hello! I'm a dedicated and enthusiastic web developer with a passion for building beautiful, functional, and user-centered digital experiences. I have a strong foundation in front-end and back-end technologies and am always eager to learn more.</p>
-        <p>Here are a few technologies I've been working with recently:</p>
-        <ul className="list-none p-0 flex justify-center flex-wrap gap-4 mt-8">
-          {skills.map(skill => (
-            <li 
-              key={skill} 
-              className="bg-bg py-3 px-6 rounded-full border border-transparent transition-all duration-300 font-medium hover:bg-primary hover:text-white hover:-translate-y-0.5"
-            >
-              {skill}
-            </li>
-          ))}
-        </ul>
-      </div>
+    <section className='max-w-6xl mx-auto relative z-10'>
+      <motion.h2
+      className='text-4xl text-center mb-4 bg-gradient-to-r from-blue-400 to-pink-400 bg-clip-text text-transparent'
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y:0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      >
+        About Me
+      </motion.h2>
+
     </section>
   );
 };
