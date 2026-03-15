@@ -28,7 +28,20 @@ const About = () => {
   ];
 
   return (
-    <section className='max-w-6xl mx-auto relative z-10'>
+    <section id="about" className="py-20 px-4 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
+      {/* Animated background blobs */}
+      <motion.div
+        className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"
+        animate={{
+          scale: [1, 1.2, 1],
+          opacity: [0.3, 0.5, 0.3],
+        }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        />
       <motion.h2
       className='text-4xl text-center mb-4 bg-gradient-to-r from-blue-400 to-pink-400 bg-clip-text text-transparent'
       initial={{ opacity: 0, y: 20 }}
