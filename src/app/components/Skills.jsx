@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 export function Skills() {
   const allSkills = [
-    'JavaScript', 'React', 'Node.js', 'HTML',
+    'JavaScript', 'React', 'HTML',
     'CSS', 'Git', 'Tailwind', 'Testing', 'React Native', 'R',
     'Python', 'Docker', 'CI/CD', 'Agile', 'Business Intelligence'
   ];
@@ -19,7 +19,7 @@ export function Skills() {
     },
     {
       title: 'Back-end',
-      skills: ['Node.js', 'Django'],
+      skills: [ 'Django' ],
       color: 'from-purple-400 to-pink-400',
       borderColor: 'border-purple-400/30',
       bgGlow: 'bg-purple-500/10'

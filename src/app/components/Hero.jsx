@@ -178,7 +178,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7 }}
         >
-          I build 
+          With 2 years of professional experience in Software Quality Assurance, I’ve transitioned into a developer role with a deep understanding of how to build resilient, bug-free applications. My background in a fast-paced startup allowed me to build interactive interfaces using Vue.js and dive into the back-end to solve complex architectural issues. Outside of my professional role, I am an avid learner, currently building personal projects with React and Tailwind CSS to stay at the forefront of modern web development.
         </motion.p>
         
         <motion.div 
